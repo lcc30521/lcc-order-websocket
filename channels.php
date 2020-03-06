@@ -16,6 +16,6 @@ Broadcast::channel('User.{id}', function ($user, $id) {
 });
 
 Broadcast::channel('Order{id}', function ($user, $id) {
-  //  dd(Order::findOrFail($id)->user_id);
+ 
     return (int) Order::findOrFail($id)->user_id === (int) $user->id;
 });
